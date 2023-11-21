@@ -6,7 +6,7 @@ function ViewTable() {
   const [students, setStudent] = useState([]);
   useEffect(() => {
     axios
-      .get("https://sriramstudentdatabase.onrender.com/students")
+      .get("https://backendsignup.onrender.com/students")
       .then(({ data }) => {
         setStudent(data);
       })

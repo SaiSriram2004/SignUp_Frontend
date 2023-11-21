@@ -4,8 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 function ViewTableRow(props) {
   const DeleteStudent = () => {
-    let url = "https://sriramstudentdatabase.onrender.com/students/delete-student/";
-    //let url = "http://localhost:5500/students/delete-student/";
+    //let url = "https://sriramstudentdatabase.onrender.com/students/delete-student/";
+    let url = "https://backendsignup.onrender.com/students/delete-student/";
     axios
       .delete(url + props.obj._id)
       .then((res) => {

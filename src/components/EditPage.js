@@ -9,7 +9,8 @@ function EditPage() {
 
   useEffect(() => {
     axios
-      .get("https://sriramstudentdatabase.onrender.com/students/update-student/" + obj1.id)
+      //.get("https://sriramstudentdatabase.onrender.com/students/update-student/" + obj1.id)
+      .get("https://backendsignup.onrender.com/students/update-student/" + obj1.id)
       .then((res) => {
         if (res.status === 200) {
           setName(res.data.name);
@@ -25,8 +26,8 @@ function EditPage() {
   }, [obj1.id]);
 
   const handleSubmit = () => {
-    const url = "https://sriramstudentdatabase.onrender.com/students/update-student/" + obj1.id;
-    //const url = "http://localhost:5500/students/update-student/" + obj1.id;
+    //const url = "https://sriramstudentdatabase.onrender.com/students/update-student/" + obj1.id;
+    const url = "https://backendsignup.onrender.com/students/update-student/" + obj1.id;
     const newData = { name, email, password };
     axios
       .put(url, newData)
