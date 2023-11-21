@@ -160,13 +160,13 @@ function LogIn() {
     const url = "https://backendsignup.onrender.com/students/login";
 
     // Send a POST request to the login endpoint
-    axios.post(url, obj)
+    axios
+      .post(url, obj)
       .then((res) => {
         // Handle successful login
         alert(res.data); // You can customize this based on your application
-        if(res.data === "login successfull")
-        {
-          navigate("/home");// Redirect to the home page upon successful login
+        if (res.data === "login successfull") {
+          navigate("/home"); // Redirect to the home page upon successful login
         }
       })
       .catch((err) => {
@@ -181,28 +181,35 @@ function LogIn() {
   };
 
   return (
-    <div className="form-container">
-      <h1>Login </h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email"><b>Email</b></label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password"><b>Password</b></label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {error && <div className="error-message">{error}</div>}
-        <input id="submit" type="submit" value="Submit" />
-      </form>
+    <div>
+      <img src={require("../assets/img/headphones.png")} alt="Example" />
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <h1>Login </h1>
+          <label htmlFor="email">
+            <b>Email</b>
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="password">
+            <b>Password</b>
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {error && <div className="error-message">{error}</div>}
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
   );
 }

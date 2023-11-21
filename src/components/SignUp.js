@@ -109,9 +109,7 @@ export default SignUp;*/
 import React, { useState } from "react";
 import "./styles.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -167,9 +165,7 @@ function SignUp() {
         setPassword("");
         setConfirmPassword("");
         setError("");
-      }
-      
-      else {
+      } else {
         throw new Error("Failed to add");
       }
     } catch (err) {
@@ -179,59 +175,59 @@ function SignUp() {
   };
 
   return (
-    <div className="form-container">
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          <b>Name</b>
-        </label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Enter Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label htmlFor="email">
-          <b>Email</b>
-        </label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">
-          <b>Password</b>
-        </label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="confirmPassword">
-          <b>Confirm Password</b>
-        </label>
-        <input
-          type="password"
-          id="confirmPassword"
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <div className="error-message">{error}</div>
-        <input id="submit" type="submit" value="Submit" />
-      </form>
-      <h2>Have an account?</h2>
-      <h4>
-        <Link to="/login">Login Page</Link>
-      </h4>
-      <h4>
-        <Link to="/view">View Page</Link>
-      </h4>
+    <div>
+      <img src={require("../assets/img/headphones.png")} alt="Example" />
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <label htmlFor="name">
+            <b>Name</b>
+          </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label htmlFor="email">
+            <b>Email</b>
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="password">
+            <b>Password</b>
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label htmlFor="confirmPassword">
+            <b>Confirm Password</b>
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <div className="error-message">{error}</div>
+          <input id="submit" type="submit" value="Submit" />
+          <h2>Have an account?</h2>
+          <h4>
+            <Link to="/login">Login Page</Link>
+          </h4>
+        </form>
+      </div>
     </div>
   );
 }
