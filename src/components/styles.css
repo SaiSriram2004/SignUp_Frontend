@@ -51,7 +51,7 @@ button {
 }
 
 .form-container {
-  background-image: url("C:\\Users\\P. Sai Sriram Reddy\\Desktop\\VIT MERN INTERSHIP\\CLASS\\CRUD\\frontend\\public\\Login.png");
+  background-image: url("../assets/img/Login.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
